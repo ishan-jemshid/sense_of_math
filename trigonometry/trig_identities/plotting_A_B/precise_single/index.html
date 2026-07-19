@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Equation Plotter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+</head>
+<body>
+
+    <div id="ui-panel">
+        <div class="header">
+            <h1>3D Equation Plotter</h1>
+            <p class="subtitle">Type a function of A and B.</p>
+        </div>
+
+        <div class="input-group">
+            <label>Mathematical Expression</label>
+            <div class="math-input-wrapper">
+                <div class="prefix">f(A,B) =</div>
+                <input type="text" id="equation-input" value="sin(A + B)" spellcheck="false">
+            </div>
+            <div id="error-msg"></div>
+        </div>
+
+        <div class="grid-settings">
+            <div class="setting-item">
+                <label>Grid Range (±)</label>
+                <select id="grid-range">
+                    <option value="1.570796">π/2</option>
+                    <option value="3.141592" selected>π</option>
+                    <option value="6.283185">2π</option>
+                    <option value="9.424777">3π</option>
+                    <option value="12.56637">4π</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label>Y-Axis Limit (±)</label>
+                <input type="number" id="y-limit" value="10" step="1" min="1" max="100">
+            </div>
+            <div class="setting-item" style="grid-column: span 2;">
+                <label>Resolution: <span id="res-val">120</span></label>
+                <input type="range" id="grid-resolution" value="120" min="20" max="300" step="10">
+            </div>
+        </div>
+
+        <div class="examples">
+            <label>Try these examples</label>
+            <button class="example-btn">sin(A) * cos(B)</button>
+            <button class="example-btn">tan(cos(A) + sin(B))</button>
+            <button class="example-btn">sin(sqrt(A^2 + B^2))</button>
+            <button class="example-btn">A^2 / 10 - B^2 / 10</button>
+        </div>
+
+        <div class="legend">
+            <div class="axis-label"><div class="dot" style="background: #ef4444;"></div> A Axis (X)</div>
+            <div class="axis-label"><div class="dot" style="background: #3b82f6;"></div> B Axis (Z)</div>
+            <div class="axis-label"><div class="dot" style="background: #22c55e;"></div> Output (Y)</div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

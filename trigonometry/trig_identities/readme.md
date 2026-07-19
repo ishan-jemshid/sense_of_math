@@ -20,3 +20,14 @@ but:
 these kind of things are hard to see, so here mainly i am gonna be making a 3D graph of axises A,B,and f(A,B)
 
 and from these explore the possibilities trying to find pattern which I hope could be usefull.
+
+
+## Update
+
+got results wayy better than exepected
+"**precise_single**" file gives really good looking graphs
+(easier for understanding an equation)
+
+"**simple_multiple**" file gives neat plane graphs, but multiple graphs can be overlapped on each other
+(For comparing graphs)
+(feels like it could be pretty usefull)
