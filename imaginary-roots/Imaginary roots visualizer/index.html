@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizing Imaginary Roots</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Load Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Load OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+    <div id="ui-panel">
+        <div class="panel-header">
+            <h1>General Quadratic</h1>
+            <button id="toggle-ui-btn" title="Toggle UI">−</button>
+        </div>
+
+        <div id="equation-display">f(x) = x² + 1</div>
+
+        <div id="ui-content">
+            <div class="legend-item">
+                <div class="color-box" style="background-color: #ef4444;"></div>
+                <span><strong>Red Curve:</strong> Real Output</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box" style="background-color: #3b82f6;"></div>
+                <span><strong>Blue Curve:</strong> Imaginary Slice at Vertex</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box" style="background-color: #10b981; border-radius: 50%;"></div>
+                <span><strong>Green Spheres:</strong> Roots (Real or Complex)</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box" style="background-color: rgba(167, 139, 250, 0.4);"></div>
+                <span><strong>Purple Surface:</strong> Full Saddle Surface</span>
+            </div>
+
+            <div class="controls">
+                <div class="slider-group">
+                    <label><span>Coefficient <strong>a</strong>:</span></label>
+                    <div class="input-row">
+                        <input type="range" id="slider-a" min="-4" max="4" step="0.01" value="1">
+                        <input type="number" id="input-a" min="-4" max="4" step="0.01" value="1">
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <label><span>Coefficient <strong>b</strong>:</span></label>
+                    <div class="input-row">
+                        <input type="range" id="slider-b" min="-10" max="10" step="0.1" value="0">
+                        <input type="number" id="input-b" min="-10" max="10" step="0.1" value="0">
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <label><span>Constant <strong>c</strong>:</span></label>
+                    <div class="input-row">
+                        <input type="range" id="slider-c" min="-20" max="20" step="0.1" value="1">
+                        <input type="number" id="input-c" min="-20" max="20" step="0.1" value="1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-text">
+                Notice how the roots leave the Real Axis (X) and move into the Imaginary Axis (Z) when the red parabola stops crossing the floor.
+            </div>
+        </div>
+    </div>
+
+    <div id="solutions-panel">
+        <h1>Roots</h1>
+        <div id="solutions-display">x₁ = 0.00, x₂ = 0.00</div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #111827;
+    color: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+#ui-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(31, 41, 55, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid #374151;
+    width: 340px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    pointer-events: auto;
+}
+h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #60a5fa;
+}
+#equation-display {
+    font-size: 1.1rem;
+    font-family: monospace;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #fff;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+.color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.controls {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #4b5563;
+}
+.slider-group {
+    margin-bottom: 12px;
+}
+.slider-group label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+input[type="range"] {
+    flex-grow: 1;
+    cursor: pointer;
+}
+input[type="number"] {
+    width: 60px;
+    background: rgba(17, 24, 39, 0.9);
+    border: 1px solid #4b5563;
+    color: #f3f4f6;
+    padding: 4px;
+    border-radius: 4px;
+    font-family: monospace;
+    text-align: right;
+}
+input[type="number"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+}
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.panel-header h1 {
+    margin: 0;
+}
+#toggle-ui-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+    border-radius: 4px;
+}
+#toggle-ui-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+.hidden {
+    display: none !important;
+}
+.help-text {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    line-height: 1.4;
+}
+#solutions-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(31, 41, 55, 0.85);
+    padding: 16px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid #374151;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+#solutions-panel h1 {
+    color: #10b981;
+}
+#solutions-display {
+    font-size: 1.05rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
